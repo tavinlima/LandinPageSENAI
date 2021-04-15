@@ -19,12 +19,12 @@
                 <a href="#desafios" onclick="BotaoDoMenu()">desafios</a>
                 <a href="#endereco" onclick="BotaoDoMenu()">endereço </a>
             </nav>
-             <a class="btn_menu" href="#" onclick="BotaoDoMenu()">
+            <a class="btn_menu" href="javascript:void(0)" onclick="BotaoDoMenu()">
                 <i class="fas fa-bars"></i>
             </a>
         </div>
     </header>
-    <main onclick="BotaoSair()"> 
+    <main onclick="SairMenu()">
         <section id="inicio" class="container_banner">
             <img class="banner_inicial" src="assets_/assets_/imagem-fundo-banner.png" alt="banner_pessoas_jogando">
             <div class="container conteudo_banner">
@@ -80,7 +80,7 @@
             </div>
         </section>
 
-        <section id= "endereco" class="endereco">
+        <section id="endereco" class="endereco">
 
             <h2>endereço:</h2>
             <div class="endereco_box">
@@ -97,28 +97,36 @@
     </footer>
 
     <script>
-        function BotaoDoMenu(){
-            var menu = document.getElementById("links");
-            if (menu.style.display === "flex") {
-                //Esconder o menu
-                menu.style.display = "none";
-            } else{
-                //Mostrar o menu
+        var menu = document.getElementById("links");
+        function BotaoDoMenu() {
+            if (screen.width <= 420) {
+                if (menu.style.display === "flex") {
+                    //Esconder o menu
+                    menu.style.display = "none";
+                } else {
+                    //Mostrar o menu
+                    menu.style.display = "flex";
+                }
+            }
+        }
+
+        function SairMenu() {
+            if (screen.width <= 420) {
+                if (menu.style.display === "flex") {
+                    //Esconder o menu
+                    menu.style.display = "none";
+                }
+            }
+        }
+        window.onresize = () => {
+            if(screen.width > 420) {
                 menu.style.display = "flex";
+            } else{
+                menu.style.display = "none";
             }
         }
     </script>
 
-<script>
-    function BotaoSair(){
-        var menu = document.getElementById("links");
-        if (menu.style.display === "flex") {
-            //Esconder o menu
-            menu.style.display = "none";
-        }
-    }
-</script>
-   
 </body>
 
 </html>
