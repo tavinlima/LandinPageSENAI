@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Senai dev - LandinPage</title>
+    <title>Curso Senai - desenvolvimento de sistemas - Landin Page</title>
+    <script src="https://kit.fontawesome.com/4ae9ddea7e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 
 <body>
     <header>
         <div class="container container_header">
-            <nav class="header_nav">
-                <a href="#inicio">início</a>
-                <a href="#container_projetos">sobre</a>
-                <a href="#desafios">desafios</a>
-                <a href="#endereco">endereço</a>
+            <nav id="links" class="header_nav">
+                <a href="#inicio" onclick="BotaoDoMenu()">início</a>
+                <a href="#container_projetos" onclick="BotaoDoMenu()">sobre</a>
+                <a href="#desafios" onclick="BotaoDoMenu()">desafios</a>
+                <a href="#endereco" onclick="BotaoDoMenu()">endereço </a>
             </nav>
+             <a class="btn_menu" href="#" onclick="BotaoDoMenu()">
+                <i class="fas fa-bars"></i>
+            </a>
         </div>
     </header>
-    <main>
+    <main onclick="BotaoSair()"> 
         <section id="inicio" class="container_banner">
             <img class="banner_inicial" src="assets_/assets_/imagem-fundo-banner.png" alt="banner_pessoas_jogando">
             <div class="container conteudo_banner">
@@ -91,6 +95,30 @@
     <footer>
         <span> Copyright © 2020 - Escola Senai de Informática</span>
     </footer>
+
+    <script>
+        function BotaoDoMenu(){
+            var menu = document.getElementById("links");
+            if (menu.style.display === "flex") {
+                //Esconder o menu
+                menu.style.display = "none";
+            } else{
+                //Mostrar o menu
+                menu.style.display = "flex";
+            }
+        }
+    </script>
+
+<script>
+    function BotaoSair(){
+        var menu = document.getElementById("links");
+        if (menu.style.display === "flex") {
+            //Esconder o menu
+            menu.style.display = "none";
+        }
+    }
+</script>
+   
 </body>
 
 </html>
